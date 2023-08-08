@@ -13,9 +13,9 @@ namespace EmpresaAPI.Controllers
     public class DepartamentController : ControllerBase
 	{
 
-		private readonly ApplicationDbContext _DbContext;
+	private readonly ApplicationDbContext _DbContext;
         public DepartamentController(ApplicationDbContext DbContext)
-		{
+	{
             _DbContext = DbContext;
 
         }
