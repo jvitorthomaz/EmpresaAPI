@@ -11,7 +11,7 @@ namespace EmpresaAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class DepartamentController : ControllerBase
-	{
+    {
 
 	private readonly ApplicationDbContext _DbContext;
         public DepartamentController(ApplicationDbContext DbContext)
@@ -140,8 +140,8 @@ namespace EmpresaAPI.Controllers
         public IActionResult BuscarDepartamentoInativoPorNome(string? buscaDepartamento)
         {
             var departamentosDesativados = _DbContext.Departaments.Where(d => d.Status == StatusEnum.Inativo && (
-                d.Departament_Name.ToLower().Contains(buscaDepartamento.ToLower()) || d.Departament_Acronym.ToLower().Contains(buscaDepartamento.ToLower()))
-                ).ToList();
+                d.Departament_Name.ToLower().Contains(buscaDepartamento.ToLower()) || d.Departament_Acronym.ToLower().Contains(buscaDepartamento.ToLower())
+		)).ToList();
 
             if (buscaDepartamento.Count() > 0)
             {
